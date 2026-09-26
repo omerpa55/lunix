@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (c) 2026 Omer PALA
+
+DRIVERS =
+DEFAULTS := src/kernel \
+					 src/mm \
+					 src/uefi
+ARCH := $(shell uname -m)
+
+ifeq ($(ARCH),arm64)
+	ARCH := aarch64
+endif
+
+CC := clang
+AS := clang
+LD := lld-link
+C_SRC := $(foreach module, $(DEFAULTS), $(wildcard $(module)/*.c))
+AS_SRC := $(wildcard src/*.s)
+C_OBJ := ${C_SRC:.c=.o}
+AS_OBJ := $(AS_SRC:.s=.o)
+CFLAGS := --target=$(ARCH)-unknown-windows -ffreestanding -nostdlib -c -Iinclude
+ASFLAGS := -c --target=$(ARCH)-unknown-windows
+LDFLAGS := -subsystem:efi_application -entry:uefi_init
+TARGET := build/lunix.efi
+OBJ := $(AS_OBJ) $(C_OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $< -o $@
+
+%.o: %.s
+	$(AS) $(ASFLAGS) $< -o $@
+
+$(TARGET): $(OBJ)
+	mkdir -p build
+	$(LD) $(LDFLAGS) $^ -out:$@
+
+clean:
+	@echo "Cleaning object files and build output"
+	rm -f $(TARGET)
+	rm -f $(OBJ)
+
+.PHONY: clean
