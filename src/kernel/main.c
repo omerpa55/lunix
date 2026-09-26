@@ -1,17 +1,8 @@
-/*
- * SPDX-License-Identifier: GPL-2.0-or-later
- *
- * Copyright (c) 2026 Omer PALA
- */
+#include <boot_info.h>
+#include <stdint.h>
 
-#include <uefi.h>
+void kernel_main(boot_info_t *boot_info) {
+  volatile uint32_t *fb = (volatile uint32_t*)(uintptr_t)boot_info->fb_base;
 
-extern void qemu_uart_puts(const char *s);
-
-int main(int argc, char *argv[]) {
-  qemu_uart_puts("Test");
-
-  while (1) {
-    asm volatile("wfi");
-  }
+  fb[20] = 0xffffffff;
 }

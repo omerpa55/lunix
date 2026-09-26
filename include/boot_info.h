@@ -1,0 +1,20 @@
+#ifndef BOOT_INFO_H
+#define BOOT_INFO_H
+
+#ifndef EFIAPI
+#include <stdint.h>
+#endif // !EFIAPI
+
+typedef struct {
+  uint64_t fb_base;
+  uint64_t fb_size;
+  uint32_t fb_width;
+  uint32_t fb_height;
+  uint32_t fb_pitch;
+
+  uint64_t mem_map;
+  uint64_t mem_map_size;
+  uint64_t mem_desc_size;
+} boot_info_t;
+
+#endif // !BOOT_INFO_H

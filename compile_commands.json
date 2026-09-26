@@ -178,5 +178,20 @@
     ],
     "directory": "/home/omer/Dev/lunix",
     "output": "src/uefi/unistd.o"
+  },
+  {
+    "file": "src/drivers/qemu_uart/qemu_uart.c",
+    "arguments": [
+      "/usr/lib/llvm/22/bin/clang",
+      "--target=aarch64-unknown-windows",
+      "-ffreestanding",
+      "-c",
+      "-Iinclude",
+      "src/drivers/qemu_uart/qemu_uart.c",
+      "-o",
+      "src/drivers/qemu_uart/qemu_uart.o"
+    ],
+    "directory": "/home/omer/Dev/lunix",
+    "output": "src/drivers/qemu_uart/qemu_uart.o"
   }
 ]

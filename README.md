@@ -8,7 +8,7 @@ make
 ```
 
 This will compile kernel for you.
-To configure modules, you can change DRIVERS variable in Makefile
+To configure modules, you can change DEFAULTS variable in Makefile
 
 ### To compile multi-thread, run
 ```bash
