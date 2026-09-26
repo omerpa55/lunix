@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (c) 2026 Omer PALA
 
-DRIVERS =
 DEFAULTS := src/kernel \
 					 src/mm \
-					 src/uefi
+					 src/uefi \
+					 src/drivers/qemu_uart
 ARCH := $(shell uname -m)
 
 ifeq ($(ARCH),arm64)
