@@ -11,6 +11,16 @@ ifeq ($(ARCH),arm64)
 	ARCH := aarch64
 endif
 
+ifeq ($(ARCH),x86_64)
+	@echo "x86_64 is unsupported for now, Cross-compiling..."
+	ARCH := aarch64
+endif
+
+ifeq ($(ARCH), riscv64)
+	@echo "riscv64 is unsupported for now, Cross-compiling..."
+	ARCH := aarch64
+endif
+
 CC := clang
 AS := clang
 LD := lld-link
