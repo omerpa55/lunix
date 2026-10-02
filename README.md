@@ -1,4 +1,4 @@
-# Lunix, an unix-like kernel compatible with linux
+# Lunix, a unix-like kernel compatible with linux
 
 ## Usage
 
