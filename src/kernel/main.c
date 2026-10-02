@@ -1,3 +1,11 @@
+/*
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * Copyright (c) 2026 Omer PALA
+ *
+ * Lunix - A unix-like kernel
+ */
+
 #include <boot_info.h>
 #include <stdint.h>
 
