@@ -14,6 +14,7 @@ static uint8_t static_map_buffer[8192];
 
 extern void kernel_main(boot_info_t *boot_info);
 extern void cpu_wait(void);
+extern void switch_to_kernel(boot_info_t *boot_info);
 
 int main(int argc, char *argv[]) {
   efi_status_t status;
@@ -86,7 +87,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  kernel_main(&boot_info);
+  switch_to_kernel(&boot_info);
 
   while (1) {
     cpu_wait();

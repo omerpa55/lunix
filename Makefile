@@ -4,7 +4,8 @@
 DEFAULTS := src/kernel \
 					 src/mm \
 					 src/uefi \
-					 src/drivers/qemu_uart
+					 src/drivers/qemu_uart \
+					 src/kernel/syscalls
 ARCH := $(shell uname -m)
 
 ifeq ($(ARCH),arm64)

@@ -2,8 +2,8 @@
 #define BOOT_INFO_H
 
 #ifndef EFIAPI
-#include <stdint.h>
-#endif // !EFIAPI
+#include <types.h>
+#endif
 
 typedef struct {
   uint64_t fb_base;
