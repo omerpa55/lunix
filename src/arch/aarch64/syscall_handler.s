@@ -1,3 +1,12 @@
+/*
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * Copyright (c) 2026 Omer PALA
+ *
+ * Lunix - a unix-like kernel
+ * Syscall handler mechanism
+ */
+
 .section .text
 
 .balign 0x800

@@ -1,3 +1,13 @@
+/*
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * Copyright (c) 2026 Omer PALA
+ *
+ * Lunix - a unix-like kernel
+ *
+ * Syscall diagnose mechanism for lunix kernel
+ */
+
 #include <types.h>
 #include <syscall.h>
 #include <errno.h>

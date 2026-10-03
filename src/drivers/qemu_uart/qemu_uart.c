@@ -1,6 +1,10 @@
 /*
  * SPDX-License-Identifier: GPL-2.0-or-later
+ *
  * Copyright (c) 2026 Omer PALA
+ *
+ * Lunix - a unix-like kernel
+ * QEMU UART driver for lunix kernel
  */
 #include <stdint.h>
 #define UART0_BASE 0x09000000UL
